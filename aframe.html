@@ -3,9 +3,7 @@
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
   </head>
   <body>
-    <a-scene webxr="requiredFeatures: hit-test,local-floor;
-    optionalFeatures: dom-overlay,unbounded;
-    overlayElement: #overlay; referenceSpaceType:viewer">
+    <a-scene webxr="referenceSpaceType:local-floor">
       
       <a-plane position="0 0 -3" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
       <a-image position="-4 0 -5" scale="3 3 3" rotation="0 45 0" src="assets/pic3.png"></a-image>
