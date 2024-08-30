@@ -22,7 +22,9 @@
 
     <a-sky color="#87CEEB"></a-sky>
     <!-- <a-entity light="type:directional; castShadow:true;" position="1 1 1"></a-entity> -->
-    <a-entity camera look-controls position="0 0 0"></a-entity>
+    <a-entity id="rig" position="25 10 0">
+      <a-entity id="camera" camera look-controls></a-entity>
+    </a-entity>
   </a-scene>
 </body>
 
