@@ -5,7 +5,7 @@
 </head>
 
 <body>
-  <a-scene camera>
+  <a-scene>
 
     <a-plane position="0 -1 0" scale="3 3 3" rotation="-90 0 0" width="4" height="4" color="#E5E4E2"></a-plane>
     <a-image position="-4 0 0" scale="3 3 3" rotation="0 90 0" src="assets/pic3.png"></a-image>
@@ -20,29 +20,12 @@
     <a-gltf-model position="-4 -0.9 4" src="assets/tree1.glb"></a-gltf-model>
     <a-gltf-model position="4 -0.9 4" src="assets/tree2.glb"></a-gltf-model>
 
-    <a-sky color="#87CEEB"></a-sky>
+    <!-- <a-sky color="#87CEEB"></a-sky> -->
 
-    <a-entity id="camera" camera look-controls></a-entity>
+    <a-camera position="0 1.2 0"></a-camera>
 
   </a-scene>
-  <script>
-    AFRAME.registerComponent('rotation-reader', {
-      /**
-       * We use IIFE (immediately-invoked function expression) to only allocate one
-       * vector or euler and not re-create on every tick to save memory.
-       */
-      tick: (function () {
-        var position = new THREE.Vector3();
-        var quaternion = new THREE.Quaternion();
-
-        return function () {
-          this.el.object3D.getWorldPosition(position);
-          this.el.object3D.getWorldQuaternion(quaternion);
-          // position and rotation now contain vector and quaternion in world space.
-        };
-      })()
-    });
-  </script>
+  
 </body>
 
 </html>
