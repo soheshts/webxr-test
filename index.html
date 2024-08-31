@@ -2,9 +2,21 @@
 
 <head>
   <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  <script>
+    // grab the video element
+    const video = document.querySelector('video');
+    // this object needs to be an argument of getUserMedia
+    const constraints = {
+      video: true
+    };
+    // when you grab the stream - display it on the <video> element
+    navigator.mediaDevices.getUserMedia(constraints).
+      then((stream) => { video.srcObject = stream });
+  </script>
 </head>
 
 <body>
+  <video autoplay></video>
   <a-scene webxr="referenceSpaceType:unbounded;requiredFeatures: hit-test,local-floor;
   optionalFeatures: dom-overlay,unbounded;
   overlayElement: #overlay;">
